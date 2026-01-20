@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqt23u1t61w2q"]
+
+[ext_resource type="Script" uid="uid://glqs387ugfp8" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dodx5gaah4e3q" path="res://assets/iconos/piedra.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://b0mgueeupyoxl" path="res://assets/iconos/papel.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dl7snaq6uvsng" path="res://assets/iconos/tijera.png" id="4_7mycd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+metadata/_edit_use_anchors_ = true
+
+[node name="FondoTurno" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OverlayFin" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ReiniciarButton" type="Button" parent="."]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 35.0
+offset_right = -50.0
+offset_bottom = 75.0
+grow_horizontal = 0
+text = "Reiniciar
+"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -80.0
+offset_right = -46.0
+offset_bottom = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Volver al menú"
+
+[node name="MenuConfirmDialog" type="ConfirmationDialog" parent="."]
+title = "Confirmar salir"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TurnoLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Turno: Jugador 1"
+
+[node name="InfoLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jugador 1, elige tu jugada"
+
+[node name="OpcionesBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="PiedraButton" type="Button" parent="CenterContainer/VBoxContainer/OpcionesBox"]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "
+"
+icon = ExtResource("2_1bvp3")
+
+[node name="PapelButton" type="Button" parent="CenterContainer/VBoxContainer/OpcionesBox"]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "
+"
+icon = ExtResource("3_lquwl")
+
+[node name="TijeraButton" type="Button" parent="CenterContainer/VBoxContainer/OpcionesBox"]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_7mycd")
+
+[node name="MarcadorLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "J1: 0 || J2: 0"
+
+[node name="SiguienteRondaButton" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Siguiente ronda"
