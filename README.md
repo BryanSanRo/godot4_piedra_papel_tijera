@@ -53,11 +53,6 @@ Incluye un sistema básico de rondas y resultado (victoria/derrota/empate).
 
 ---
 
-## 📷 Capturas
-
-*(Puedes añadir aquí screenshots del juego cuando quieras)*
-
----
 
 ## 👤 Autor
 
